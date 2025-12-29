@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { User, Mail, Phone, Calendar, Clock, MessageSquare, MapPin, ChevronDown, Loader2, Stethoscope, Shield, Heart } from "lucide-react";
+import { User, Mail, Phone, Calendar, Clock, MessageSquare, MapPin, ChevronDown, Loader2, Stethoscope, Shield, Heart, Star, Award, Users } from "lucide-react";
 import PageHeader from "@/components/shared/PageHeader";
+import Footer from "@/components/sections/Footer";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { z } from "zod";
+
+import dentalReservationBanner from "@/assets/dental-reservation-banner.jpg";
 
 const timeSlots = ["09h00", "09h30", "10h00", "10h30", "11h00", "11h30", "14h00", "14h30", "15h00", "15h30", "16h00", "16h30", "17h00", "17h30", "18h00"];
 
@@ -500,14 +503,80 @@ const ReservationsPage = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border py-8 bg-background">
-        <div className="container mx-auto px-6 text-center">
-          <p className="font-sans text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Centre Dentaire. Tous droits réservés.
-          </p>
+      {/* Banner Section */}
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${dentalReservationBanner})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-dental-dark/95 via-dental-dark/85 to-dental-dark/95" />
+        
+        <div className="relative z-10 container mx-auto px-6 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="font-sans text-xs tracking-[0.4em] uppercase text-primary mb-4 font-medium">
+                Clinique Dentaire du Parc
+              </p>
+              <h2 className="font-heading text-3xl md:text-4xl text-dental-light font-semibold mb-6">
+                Des Soins d'Excellence pour Toute la Famille
+              </h2>
+              <p className="font-sans text-dental-light/70 leading-relaxed mb-8">
+                Notre équipe de dentistes qualifiés vous accompagne avec professionnalisme et bienveillance. 
+                Nous utilisons les technologies les plus avancées pour garantir des soins de qualité optimale.
+              </p>
+              <div className="flex flex-wrap gap-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                    <Award className="text-primary" size={20} />
+                  </div>
+                  <div>
+                    <p className="font-heading text-2xl text-dental-light font-semibold">15+</p>
+                    <p className="font-sans text-xs text-dental-light/60 uppercase tracking-wide">Ans d'expérience</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                    <Users className="text-primary" size={20} />
+                  </div>
+                  <div>
+                    <p className="font-heading text-2xl text-dental-light font-semibold">10 000+</p>
+                    <p className="font-sans text-xs text-dental-light/60 uppercase tracking-wide">Patients satisfaits</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                    <Star className="text-primary" size={20} />
+                  </div>
+                  <div>
+                    <p className="font-heading text-2xl text-dental-light font-semibold">4.9/5</p>
+                    <p className="font-sans text-xs text-dental-light/60 uppercase tracking-wide">Note moyenne</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="hidden lg:flex justify-center">
+              <div className="bg-dental-light/10 backdrop-blur-sm rounded-3xl p-8 border border-dental-light/20">
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center">
+                    <Phone className="text-primary-foreground" size={24} />
+                  </div>
+                  <h3 className="font-heading text-xl text-dental-light font-semibold mb-2">Besoin d'aide ?</h3>
+                  <p className="font-sans text-dental-light/60 text-sm mb-4">Notre équipe est à votre écoute</p>
+                  <a 
+                    href="tel:+33142681234" 
+                    className="font-heading text-2xl text-primary font-semibold hover:text-secondary transition-colors"
+                  >
+                    01 42 68 12 34
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </footer>
+      </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

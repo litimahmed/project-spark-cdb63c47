@@ -10,11 +10,8 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand & About */}
           <div className="lg:col-span-1">
-            <div className="mb-6 flex items-center gap-2">
-              <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground font-heading font-bold text-lg">CD</span>
-              </div>
-              <span className="font-heading text-xl font-semibold text-dental-light">Centre Dentaire</span>
+            <div className="mb-6">
+              <span className="font-heading text-xl font-semibold text-dental-light">Clinique Dentaire du Parc</span>
             </div>
             <p className="font-sans text-sm text-dental-light/60 leading-relaxed mb-6">
               Votre sourire, notre priorité. Nous offrons des soins dentaires de qualité 
@@ -125,7 +122,7 @@ const Footer = () => {
         <div className="container mx-auto px-6 lg:px-12 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
             <p className="font-sans text-xs text-dental-light/40">
-              © {currentYear} Centre Dentaire Excellence. Tous droits réservés.
+              © {currentYear} Clinique Dentaire du Parc. Tous droits réservés.
             </p>
             <div className="flex gap-6">
               <a href="#" className="font-sans text-xs text-dental-light/40 hover:text-primary transition-colors">

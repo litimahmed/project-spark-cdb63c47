@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import PageHeader from "@/components/shared/PageHeader";
+import Footer from "@/components/sections/Footer";
 
 // Import dental images
 import dentalHeroBanner from "@/assets/gallery/dental-hero-banner.jpg";
@@ -241,36 +242,30 @@ const GalleryPage = () => {
   }, [selectedIndex]);
 
   return (
-    <div className="min-h-screen bg-charcoal">
+    <div className="min-h-screen bg-background">
       <PageHeader />
 
       {/* Hero Section */}
-      <section className="relative h-[50vh] min-h-[400px] flex items-end justify-center overflow-hidden bg-charcoal pb-16">
+      <section className="relative h-[50vh] min-h-[400px] flex items-end justify-center overflow-hidden pb-16">
         {/* Background Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-50"
+          className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url('${dentalHeroBanner}')` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/40 to-charcoal" />
-        
-        {/* Floating Decorative Elements */}
-        <div className="absolute top-32 left-10 w-32 h-32 border border-gold/20 rotate-45 hidden md:block" />
-        <div className="absolute bottom-24 right-16 w-24 h-24 border border-gold/30 rotate-12 hidden md:block" />
+        <div className="absolute inset-0 bg-gradient-to-b from-dental-dark/70 via-dental-dark/50 to-background" />
         
         {/* Hero Content */}
         <div className={`relative z-10 text-center px-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold to-transparent" />
-            <div className="w-2 h-2 bg-gold rounded-full" />
-            <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold to-transparent" />
-          </div>
+          <p className="font-sans text-xs tracking-[0.4em] uppercase text-primary mb-4 font-medium">
+            Clinique Dentaire du Parc
+          </p>
           
-          <h1 className="font-luxury text-5xl md:text-7xl tracking-wide text-offwhite mb-4 italic drop-shadow-lg">
-            Notre Clinique
+          <h1 className="font-heading text-4xl md:text-6xl text-dental-light mb-4 font-semibold">
+            Notre <span className="text-primary">Clinique</span>
           </h1>
           
-          <p className="font-sans text-sm md:text-base text-offwhite/80 tracking-[0.3em] uppercase drop-shadow-md">
-            Visite Virtuelle
+          <p className="font-sans text-dental-light/70 max-w-lg mx-auto">
+            Visite virtuelle de nos espaces modernes et accueillants
           </p>
         </div>
       </section>
@@ -321,34 +316,28 @@ const GalleryPage = () => {
       <section className="relative py-24 md:py-32 overflow-hidden">
         {/* Background Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-30"
+          className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url('${dentalCtaBanner}')` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/95 to-charcoal" />
-        
-        {/* Decorative elements */}
-        <div className="absolute top-1/2 left-1/4 w-48 h-48 border border-gold/10 rotate-45" />
-        <div className="absolute bottom-1/4 right-1/3 w-32 h-32 border border-gold/15 -rotate-12" />
+        <div className="absolute inset-0 bg-gradient-to-b from-dental-dark/90 via-dental-dark/85 to-dental-dark/90" />
         
         <div className="relative z-10 max-w-3xl mx-auto text-center px-6">
-          <div className="flex items-center justify-center gap-4 mb-8">
-            <div className="w-12 h-px bg-gradient-to-r from-transparent to-gold" />
-            <div className="w-2 h-2 bg-gold rounded-full" />
-            <div className="w-12 h-px bg-gradient-to-l from-transparent to-gold" />
-          </div>
+          <p className="font-sans text-xs tracking-[0.4em] uppercase text-primary mb-4 font-medium">
+            Votre Sourire Nous Tient à Cœur
+          </p>
           
-          <h2 className="font-serif text-4xl md:text-5xl text-offwhite mb-6">
+          <h2 className="font-heading text-3xl md:text-5xl text-dental-light mb-6 font-semibold">
             Prenez Soin de Votre Sourire
           </h2>
           
-          <p className="font-sans text-offwhite/60 text-lg mb-10 max-w-xl mx-auto">
+          <p className="font-sans text-dental-light/70 text-lg mb-10 max-w-xl mx-auto">
             Prenez rendez-vous pour une consultation personnalisée. Nous vous accueillons dans un environnement chaleureux et professionnel.
           </p>
           
           <Link
             to="/reservations"
             onClick={() => window.scrollTo(0, 0)}
-            className="inline-block px-10 py-4 bg-gold text-charcoal font-sans text-sm tracking-[0.2em] uppercase border border-gold hover:bg-transparent hover:text-gold transition-all duration-300"
+            className="inline-block px-10 py-4 bg-primary text-primary-foreground font-sans text-sm tracking-[0.2em] uppercase rounded-full hover:bg-secondary hover:shadow-lg hover:shadow-primary/30 transition-all duration-300"
           >
             Prendre Rendez-vous
           </Link>
@@ -356,13 +345,7 @@ const GalleryPage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-offwhite/10 py-8">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <p className="font-sans text-sm text-offwhite/40 tracking-wider">
-            © {new Date().getFullYear()} Centre Dentaire. Tous droits réservés.
-          </p>
-        </div>
-      </footer>
+      <Footer />
 
       {/* Lightbox */}
       {selectedIndex !== null && (

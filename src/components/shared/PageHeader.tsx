@@ -35,15 +35,12 @@ const PageHeader = () => {
           {/* Logo */}
           <Link
             to="/"
-            className="group flex items-center gap-2"
+            className="group flex items-center"
           >
-            <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground font-heading font-bold text-lg">CD</span>
-            </div>
             <span className={`font-heading text-xl font-semibold tracking-tight transition-colors duration-300 ${
               isScrolled ? 'text-foreground' : 'text-dental-light'
             } group-hover:text-primary`}>
-              Centre Dentaire
+              Clinique Dentaire du Parc
             </span>
           </Link>
 
