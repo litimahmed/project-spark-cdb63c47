@@ -3,95 +3,111 @@ import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import PageHeader from "@/components/shared/PageHeader";
 
-// Top row images - slides left
+// Import dental images
+import dentalHeroBanner from "@/assets/gallery/dental-hero-banner.jpg";
+import dentalTreatmentRoom from "@/assets/gallery/dental-treatment-room.jpg";
+import dentalEquipment from "@/assets/gallery/dental-equipment.jpg";
+import dentalWaitingRoom from "@/assets/gallery/dental-waiting-room.jpg";
+import dentalChair from "@/assets/gallery/dental-chair.jpg";
+import dentalSterilization from "@/assets/gallery/dental-sterilization.jpg";
+import dentalConsultation from "@/assets/gallery/dental-consultation.jpg";
+import dentalTeamWork from "@/assets/gallery/dental-team-work.jpg";
+import dentalPatientSmile from "@/assets/gallery/dental-patient-smile.jpg";
+import dentalConsultationPatient from "@/assets/gallery/dental-consultation-patient.jpg";
+import dentalTechnology from "@/assets/gallery/dental-technology.jpg";
+import dentalSmileResult from "@/assets/gallery/dental-smile-result.jpg";
+import dentalReception from "@/assets/gallery/dental-reception.jpg";
+import dentalCtaBanner from "@/assets/gallery/dental-cta-banner.jpg";
+
+// Top row images - slides left (Equipment & Spaces)
 const topRowImages = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800",
-    alt: "Plat gastronomique magnifiquement dressé",
-    title: "Perfection Wagyu",
-    description: "Notre carpaccio de wagyu signature",
+    src: dentalTreatmentRoom,
+    alt: "Salle de traitement moderne",
+    title: "Salle de Soins",
+    description: "Équipement de pointe pour votre confort",
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1551218808-94e220e084d2?w=800",
-    alt: "Présentation de dessert",
-    title: "Symphonie Sucrée",
-    description: "Soufflé au chocolat à la feuille d'or",
+    src: dentalEquipment,
+    alt: "Équipement dentaire professionnel",
+    title: "Technologie Avancée",
+    description: "Instruments de précision modernes",
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1544025162-d76694265947?w=800",
-    alt: "Plat de foie gras",
-    title: "Foie Gras Royal",
-    description: "Poêlé avec compote de figues",
+    src: dentalWaitingRoom,
+    alt: "Salle d'attente accueillante",
+    title: "Espace Détente",
+    description: "Un environnement apaisant vous attend",
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1555244162-803834f70033?w=800",
-    alt: "Plat du menu dégustation",
-    title: "Jardin & Mer",
-    description: "De notre menu dégustation saisonnier",
+    src: dentalChair,
+    alt: "Fauteuil dentaire moderne",
+    title: "Confort Optimal",
+    description: "Fauteuils ergonomiques dernière génération",
   },
   {
     id: 5,
-    src: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800",
-    alt: "Salade fraîche gastronomique",
-    title: "Fraîcheur du Potager",
-    description: "Légumes de notre jardin partenaire",
+    src: dentalSterilization,
+    alt: "Zone de stérilisation",
+    title: "Hygiène Irréprochable",
+    description: "Normes de stérilisation strictes",
   },
   {
     id: 6,
-    src: "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=800",
-    alt: "Tartare de saumon",
-    title: "Fraîcheur Marine",
-    description: "Tartare de saumon aux agrumes",
+    src: dentalConsultation,
+    alt: "Cabinet de consultation",
+    title: "Consultation Privée",
+    description: "Espace dédié à votre écoute",
   },
 ];
 
-// Bottom row images - slides right
+// Bottom row images - slides right (Team & Results)
 const bottomRowImages = [
   {
     id: 7,
-    src: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800",
-    alt: "Salle à manger élégante",
-    title: "La Salle Principale",
-    description: "Où l'art culinaire rencontre une ambiance raffinée",
+    src: dentalTeamWork,
+    alt: "Équipe dentaire au travail",
+    title: "Notre Équipe",
+    description: "Des professionnels dévoués à votre sourire",
   },
   {
     id: 8,
-    src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800",
-    alt: "Coin repas intime",
-    title: "Coin Privé",
-    description: "Places intimes pour des moments spéciaux",
+    src: dentalPatientSmile,
+    alt: "Patient souriant après traitement",
+    title: "Sourire Éclatant",
+    description: "Des résultats qui parlent d'eux-mêmes",
   },
   {
     id: 9,
-    src: "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800",
-    alt: "Chef préparant un plat",
-    title: "Maîtrise Culinaire",
-    description: "Le Chef Laurent à l'œuvre",
+    src: dentalConsultationPatient,
+    alt: "Consultation avec patient",
+    title: "Écoute Attentive",
+    description: "Votre santé bucco-dentaire, notre priorité",
   },
   {
     id: 10,
-    src: "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=800",
-    alt: "Cave à vins",
-    title: "La Cave",
-    description: "Plus de 500 sélections choisies",
+    src: dentalTechnology,
+    alt: "Technologie dentaire avancée",
+    title: "Innovation",
+    description: "Scanner 3D et imagerie numérique",
   },
   {
     id: 11,
-    src: "https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=800",
-    alt: "Mains du chef dressant un plat",
-    title: "L'Art du Dressage",
-    description: "Précision dans chaque détail",
+    src: dentalSmileResult,
+    alt: "Transformation du sourire",
+    title: "Avant / Après",
+    description: "Des transformations remarquables",
   },
   {
     id: 12,
-    src: "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=800",
-    alt: "Table dressée",
-    title: "L'Art de la Table",
-    description: "Chaque détail compte",
+    src: dentalReception,
+    alt: "Accueil chaleureux",
+    title: "Accueil Souriant",
+    description: "Un service personnalisé dès votre arrivée",
   },
 ];
 
@@ -233,7 +249,7 @@ const GalleryPage = () => {
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-50"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=1920')" }}
+          style={{ backgroundImage: `url('${dentalHeroBanner}')` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/40 to-charcoal" />
         
@@ -250,11 +266,11 @@ const GalleryPage = () => {
           </div>
           
           <h1 className="font-luxury text-5xl md:text-7xl tracking-wide text-offwhite mb-4 italic drop-shadow-lg">
-            La Galerie
+            Notre Clinique
           </h1>
           
           <p className="font-sans text-sm md:text-base text-offwhite/80 tracking-[0.3em] uppercase drop-shadow-md">
-            Un Voyage Visuel
+            Visite Virtuelle
           </p>
         </div>
       </section>
@@ -268,14 +284,14 @@ const GalleryPage = () => {
             <div className={`text-center transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <div className="flex items-center justify-center gap-4 mb-6">
                 <div className="w-20 h-px bg-gold/50" />
-                <span className="font-sans text-xs tracking-[0.3em] uppercase text-charcoal/50">Notre Univers</span>
+                <span className="font-sans text-xs tracking-[0.3em] uppercase text-charcoal/50">Nos Espaces</span>
                 <div className="w-20 h-px bg-gold/50" />
               </div>
               <h2 className="font-luxury text-4xl md:text-5xl text-charcoal italic mb-4">
-                L'Art de Vivre
+                Excellence & Innovation
               </h2>
               <p className="font-sans text-charcoal/60 max-w-xl mx-auto">
-                Découvrez notre univers gastronomique à travers ces instants capturés
+                Découvrez notre clinique moderne à travers ces images de nos installations et de notre équipe dévouée
               </p>
             </div>
           </div>
@@ -303,6 +319,11 @@ const GalleryPage = () => {
 
       {/* Bottom CTA Section */}
       <section className="relative py-24 md:py-32 overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-30"
+          style={{ backgroundImage: `url('${dentalCtaBanner}')` }}
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/95 to-charcoal" />
         
         {/* Decorative elements */}
@@ -317,11 +338,11 @@ const GalleryPage = () => {
           </div>
           
           <h2 className="font-serif text-4xl md:text-5xl text-offwhite mb-6">
-            Découvrez Le Sept en Personne
+            Prenez Soin de Votre Sourire
           </h2>
           
           <p className="font-sans text-offwhite/60 text-lg mb-10 max-w-xl mx-auto">
-            Laissez-nous créer une soirée inoubliable pour vous. Réservez votre table et plongez dans notre univers d'excellence culinaire.
+            Prenez rendez-vous pour une consultation personnalisée. Nous vous accueillons dans un environnement chaleureux et professionnel.
           </p>
           
           <Link
@@ -329,7 +350,7 @@ const GalleryPage = () => {
             onClick={() => window.scrollTo(0, 0)}
             className="inline-block px-10 py-4 bg-gold text-charcoal font-sans text-sm tracking-[0.2em] uppercase border border-gold hover:bg-transparent hover:text-gold transition-all duration-300"
           >
-            Réserver Votre Table
+            Prendre Rendez-vous
           </Link>
         </div>
       </section>
@@ -338,7 +359,7 @@ const GalleryPage = () => {
       <footer className="border-t border-offwhite/10 py-8">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="font-sans text-sm text-offwhite/40 tracking-wider">
-            © {new Date().getFullYear()} Le Sept. Tous droits réservés.
+            © {new Date().getFullYear()} Centre Dentaire. Tous droits réservés.
           </p>
         </div>
       </footer>
